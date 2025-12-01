@@ -1,87 +1,61 @@
+/* removendo margens padrões */
 * {
-    /* O mais importante: Remove todas as margens e paddings padrão */
-    padding: 0 !important; /* Usando !important para anular qualquer estilo Bootstrap */
-    margin: 0 !important;  /* Usando !important para anular qualquer estilo Bootstrap */
+    padding: 0;
+    margin: 0; 
     box-sizing: border-box;
-
-}
-
-* {
-  font-family: "Crimson Text", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-body {
-    /* Garante que o menu absoluto use o body como referência */
-    position: relative;
-    overflow-x: hidden; 
-}
-
-/* --- NOVO MENU SIMPLIFICADO --- */
-.menu-superior {
-    position: absolute;
-    z-index: 100; /* Garante que fique no topo de tudo */
-    
-    /* Posiciona no canto superior direito */
-    top: 20px; 
-    right: 20px; 
-    
-    display: flex; 
-    gap: 20px; 
-}
-
-.link-menu {
-    /* 1. Definir o Degradê como Fundo */
-    /* Exemplo: Degradê Linear (de cima para baixo) de Dourado para Amarelo */
-    background-image: linear-gradient(
-        to bottom, 
-        rgb(255, 255, 255), /* Cor mais escura no topo */
-        rgb(211, 211, 126)  /* Cor mais clara na base */
-    );
-    
-    /* 2. Propriedades para Mascarar o Texto (Webkit, funciona na maioria dos navegadores modernos) */
-    
-    /* Faz o fundo (gradient) aparecer apenas na área do texto */
-    -webkit-background-clip: text; 
-    
-    /* Torna a cor do texto transparente, permitindo que o fundo apareça */
-    -webkit-text-fill-color: transparent; 
-    
-    /* Código padrão (Mantido) */
-    text-decoration: none;
-    font-size: 30px;
-    padding: 5px 0;
-    font-family: "MedievalSharp", cursive;
+  font-family: "Ewert", serif;
   font-weight: 400;
   font-style: normal;
 }
 
-/* --- Imagem de Fundo (Diretamente no Body) --- */
-/* Removida a classe .main no CSS */
 
+body {
+    position: relative;
+    overflow-x: hidden; 
+}
+
+/* opções para trocar de tela */
+.menuSuperior {
+    position: absolute;
+    z-index: 100; 
+    top: 20px; 
+    right: 20px; 
+    display: flex; 
+    gap: 30px; 
+}
+
+.linkMenu {
+    background-image: linear-gradient(
+        to bottom, rgb(252, 252, 252), rgb(161, 126, 211)  );
+    -webkit-background-clip: text; 
+    
+    -webkit-text-fill-color: transparent; 
+    text-decoration: none;
+    font-size: 30px;
+    padding: 5px 0;
+     font-family: "Croissant One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* imagem fundo */
 .img-fundo {
-    /* Essencial para preencher a tela e evitar a barra branca inferior */
-    display: block; 
+    display: block; /* usar pra conseguir usar as figurinhas */
     width: 100%;
 }
 
-/* ---------------------------------------------------- */
-/* --- Figurinhas (O restante é o seu código de posicionamento e animação) --- */
-/* ---------------------------------------------------- */
-
-/* --- Estilo Base para as Imagens Internas (Controle de Tamanho) --- */
-.figure img, 
-.figure2 img, 
-.figure3 img, 
-.figure4 img {
+/* figuras soltas */
+.fgBolinha img, 
+.fgBolinha2 img, 
+.fgBolinha3 img, 
+.fgBolinha4 img {
     width: 30px; 
     height: auto; 
     max-width: 100%; 
 }
 
-/* Figuras de tamanho diferente */
-.figure5 img {
+/* figuras de tamanho diferente */
+.fgElemento img {
     width: 350px; 
     height: auto; 
     max-width: 100%;
@@ -137,41 +111,41 @@ body {
     border-radius: 30%;
 }
 
-/* --- Posições das Figurinhas --- */
-.figure, .figure2, .figure3, .figure4, .figure5, .figure6, .figure7, .figure8, .figure9, .figure10, .figure12 {
+/* posições das figurinhas */
+.fgBolinha, .fgBolinha2, .fgBolinha3, .fgBolinha4, .fgElemento, .figure6, .figure7, .figure8, .figure9, .figure10, .figure12 {
     position: absolute;
     z-index: 10;
 }
 
-.figure {
+.fgBolinha {
     top: 10%; 
     left: 10%; 
     transform: translate(-50%, -50%); 
     animation: piscar 2s infinite ease-in-out 1.7s;
 }
 
-.figure2 {
+.fgBolinha2 {
     top: 10%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
     animation: piscar 8s infinite ease-in-out 8.7s;
 }
 
-.figure3 {
+.fgBolinha3 {
     top: 20%; 
     left: 70%; 
     transform: translate(-50%, -50%); 
     animation: piscar 10s infinite ease-in-out 3.7s;
 }
 
-.figure4 {
+.fgBolinha4 {
     top: 50%; 
     left: 10%; 
     transform: translate(-50%, -50%); 
     animation: piscar 4s infinite ease-in-out 3.7s;
 }
 
-.figure5 {
+.fgElemento {
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
@@ -179,7 +153,7 @@ body {
 }
 
 .figure6 {
-    top: 78%; 
+    top: 73%; 
     left: 6%; 
     transform: translate(-50%, -50%); 
 }
@@ -297,11 +271,7 @@ body {
     max-width: 100%;
 }
 
-
-/* ---------------------------------------------------- */
-/* --- Animações --- */
-/* ---------------------------------------------------- */
-
+/* animações */
 @keyframes piscar {
     0%,
     100% {
