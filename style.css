@@ -1,0 +1,329 @@
+* {
+    /* O mais importante: Remove todas as margens e paddings padrão */
+    padding: 0 !important; /* Usando !important para anular qualquer estilo Bootstrap */
+    margin: 0 !important;  /* Usando !important para anular qualquer estilo Bootstrap */
+    box-sizing: border-box;
+
+}
+
+* {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+    /* Garante que o menu absoluto use o body como referência */
+    position: relative;
+    overflow-x: hidden; 
+}
+
+/* --- NOVO MENU SIMPLIFICADO --- */
+.menu-superior {
+    position: absolute;
+    z-index: 100; /* Garante que fique no topo de tudo */
+    
+    /* Posiciona no canto superior direito */
+    top: 20px; 
+    right: 20px; 
+    
+    display: flex; 
+    gap: 20px; 
+}
+
+.link-menu {
+    /* 1. Definir o Degradê como Fundo */
+    /* Exemplo: Degradê Linear (de cima para baixo) de Dourado para Amarelo */
+    background-image: linear-gradient(
+        to bottom, 
+        rgb(255, 255, 255), /* Cor mais escura no topo */
+        rgb(211, 211, 126)  /* Cor mais clara na base */
+    );
+    
+    /* 2. Propriedades para Mascarar o Texto (Webkit, funciona na maioria dos navegadores modernos) */
+    
+    /* Faz o fundo (gradient) aparecer apenas na área do texto */
+    -webkit-background-clip: text; 
+    
+    /* Torna a cor do texto transparente, permitindo que o fundo apareça */
+    -webkit-text-fill-color: transparent; 
+    
+    /* Código padrão (Mantido) */
+    text-decoration: none;
+    font-size: 30px;
+    padding: 5px 0;
+    font-family: "MedievalSharp", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* --- Imagem de Fundo (Diretamente no Body) --- */
+/* Removida a classe .main no CSS */
+
+.img-fundo {
+    /* Essencial para preencher a tela e evitar a barra branca inferior */
+    display: block; 
+    width: 100%;
+}
+
+/* ---------------------------------------------------- */
+/* --- Figurinhas (O restante é o seu código de posicionamento e animação) --- */
+/* ---------------------------------------------------- */
+
+/* --- Estilo Base para as Imagens Internas (Controle de Tamanho) --- */
+.figure img, 
+.figure2 img, 
+.figure3 img, 
+.figure4 img {
+    width: 30px; 
+    height: auto; 
+    max-width: 100%; 
+}
+
+/* Figuras de tamanho diferente */
+.figure5 img {
+    width: 350px; 
+    height: auto; 
+    max-width: 100%;
+    animation: piscar 6s infinite ease-in-out 3.7s; 
+}
+
+.figure6 img {
+    width: 300px; 
+    height: auto; 
+    max-width: 100%;
+}
+
+.figure7 img {
+    width: 65px; 
+    height: auto; 
+    max-width: 100%;
+    animation: piscar2 12s infinite ease-in-out 4.7s; 
+}
+
+.figure8 img, .figure9 img {
+    width: 80px; 
+    height: auto; 
+    max-width: 100%;
+}
+
+.figure10 img, .figure12 img {
+    width: 220px; 
+    height: auto; 
+    max-width: 100%;
+}
+
+.figure11 img {
+    width: 250px; 
+    height: auto; 
+    max-width: 100%;
+}
+
+.figure13 img {
+    width: 1050px; 
+    height: auto; 
+    max-width: 100%;
+    filter: blur(10px);
+    opacity: 0.7;
+    border-radius: 30%;
+}
+
+.figure14 img {
+    width: 1050px; 
+    height: auto; 
+    max-width: 100%;
+    filter: blur(10px);
+    opacity: 0.7;
+    border-radius: 30%;
+}
+
+/* --- Posições das Figurinhas --- */
+.figure, .figure2, .figure3, .figure4, .figure5, .figure6, .figure7, .figure8, .figure9, .figure10, .figure12 {
+    position: absolute;
+    z-index: 10;
+}
+
+.figure {
+    top: 10%; 
+    left: 10%; 
+    transform: translate(-50%, -50%); 
+    animation: piscar 2s infinite ease-in-out 1.7s;
+}
+
+.figure2 {
+    top: 10%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    animation: piscar 8s infinite ease-in-out 8.7s;
+}
+
+.figure3 {
+    top: 20%; 
+    left: 70%; 
+    transform: translate(-50%, -50%); 
+    animation: piscar 10s infinite ease-in-out 3.7s;
+}
+
+.figure4 {
+    top: 50%; 
+    left: 10%; 
+    transform: translate(-50%, -50%); 
+    animation: piscar 4s infinite ease-in-out 3.7s;
+}
+
+.figure5 {
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    animation: piscar 6s infinite ease-in-out 3.7s;
+}
+
+.figure6 {
+    top: 78%; 
+    left: 6%; 
+    transform: translate(-50%, -50%); 
+}
+
+.figure7 {
+    top: 69%; 
+    left: 2%; 
+    transform: translate(-50%, -50%); 
+    animation: piscar2 12s infinite ease-in-out 4.7s; 
+}
+
+.figure8 {
+    top: 60%; 
+    left: 15%; 
+    transform: translate(-50%, -50%); 
+    animation: piscar2 6s infinite ease-in-out 3.7s; 
+}
+
+.figure9 {
+    top: 50%; 
+    left: 12%; 
+    transform: translate(-50%, -50%); 
+    animation: piscar2 8s infinite ease-in-out 8.7s; 
+}
+
+.figure10 {
+    top: 42%; 
+    left: 60%; 
+    transform: translate(-50%, -50%);  
+}
+
+.figure11 {
+    top: 42%; 
+    left: 70%; 
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 15;
+  
+}
+
+.figure12 {
+    top: 42%; 
+    left: 80%; 
+    transform: translate(-50%, -50%);  
+}
+
+.figure13 {
+    top: 40%; 
+    left: 70%; 
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 8;
+    opacity: 0.7;
+    border-radius: 50%;
+    
+}
+
+.figure14 {
+    top: 50%; 
+    left: 70%; 
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 8;
+    opacity: 0.7;
+    border-radius: 50%;
+    
+}
+
+.figure10:hover{
+    top: 42%; 
+    left: 60%;
+    width: 450px; 
+    transform: translate(-50%, -50%);
+    
+
+}
+
+.figure10 img:hover {
+    width: 300px; 
+    height: auto; 
+    transform: rotate(-4deg);
+    max-width: 100%;
+}
+
+
+.figure11:hover{
+    top: 42%; 
+    left: 73%;
+    width: 450px; 
+    transform: translate(-50%, -50%);
+    
+
+}
+
+.figure11 img:hover {
+    width: 310px; 
+    height: auto; 
+    max-width: 100%;
+}
+
+
+.figure12:hover{
+    top: 43%; 
+    left: 85%;
+    width: 350px; 
+    transform: translate(-50%, -50%);
+    
+
+}
+
+.figure12 img:hover {
+    width: 300px; 
+    height: auto; 
+    transform: rotate(4deg);
+    max-width: 100%;
+}
+
+
+/* ---------------------------------------------------- */
+/* --- Animações --- */
+/* ---------------------------------------------------- */
+
+@keyframes piscar {
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(0.8);
+        opacity: 0.1;
+    }
+}
+
+@keyframes piscar2 {
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.8);
+        opacity: 0.1;
+    }
+}
