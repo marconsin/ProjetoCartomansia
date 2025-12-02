@@ -1,11 +1,12 @@
 /* removendo margens padrões */
 * {
-    padding: 0;
-    margin: 0; 
+    /* O !important ajuda a garantir que o Bootstrap não adicione margens indesejadas */
+    padding: 0 !important;
+    margin: 0 !important; 
     box-sizing: border-box;
-  font-family: "Ewert", serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Ewert", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -25,26 +26,31 @@ body {
 }
 
 .linkMenu {
+    /* GRADIENT NO TEXTO */
     background-image: linear-gradient(
-        to bottom, rgb(252, 252, 252), rgb(161, 126, 211)  );
+        to bottom, rgb(252, 252, 252), rgb(161, 126, 211) 
+    );
     -webkit-background-clip: text; 
-    
     -webkit-text-fill-color: transparent; 
+    
     text-decoration: none;
     font-size: 30px;
     padding: 5px 0;
-     font-family: "Croissant One", serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Croissant One", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* imagem fundo */
 .img-fundo {
-    display: block; /* usar pra conseguir usar as figurinhas */
+    display: block; 
     width: 100%;
 }
 
-/* figuras soltas */
+/* ---------------------------------------------------- */
+/* --- ESTILOS DE TAMANHO E TRANSIÇÃO (FLUIDEZ) --- */
+/* ---------------------------------------------------- */
+
 .fgBolinha img, 
 .fgBolinha2 img, 
 .fgBolinha3 img, 
@@ -54,7 +60,6 @@ body {
     max-width: 100%; 
 }
 
-/* figuras de tamanho diferente */
 .fgElemento img {
     width: 350px; 
     height: auto; 
@@ -81,42 +86,58 @@ body {
     max-width: 100%;
 }
 
+/* CARTAS DE HOVER - TRANSIÇÃO */
 .figure10 img, .figure12 img {
     width: 220px; 
     height: auto; 
     max-width: 100%;
+    /* Transição para suavizar a mudança de tamanho, rotação e filtro */
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, filter 0.3s ease-in-out; 
 }
 
 .figure11 img {
     width: 250px; 
     height: auto; 
     max-width: 100%;
+    /* Transição para suavizar a mudança de tamanho, rotação e filtro */
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-.figure13 img {
+/* FIGURAS DE FUNDO COM BLUR */
+.figure13 img, .figure14 img {
     width: 1050px; 
     height: auto; 
     max-width: 100%;
-    filter: blur(10px);
+    filter: blur(10px); /* Efeito Desfoque */
     opacity: 0.7;
     border-radius: 30%;
 }
 
-.figure14 img {
-    width: 1050px; 
-    height: auto; 
-    max-width: 100%;
-    filter: blur(10px);
-    opacity: 0.7;
-    border-radius: 30%;
+.fgBolinha img, 
+.fgBolinha2 img, 
+.fgBolinha3 img, 
+.fgBolinha4 img {
+    animation: flutuar 5s ease-in-out infinite; 
 }
 
-/* posições das figurinhas */
-.fgBolinha, .fgBolinha2, .fgBolinha3, .fgBolinha4, .fgElemento, .figure6, .figure7, .figure8, .figure9, .figure10, .figure12 {
+/* ---------------------------------------------------- */
+/* --- POSICIONAMENTO E TRANSIÇÃO DO CONTAINER --- */
+/* ---------------------------------------------------- */
+
+.fgBolinha, .fgBolinha2, .fgBolinha3, .fgBolinha4, .fgElemento, .figure6, .figure7, .figure8, .figure9 {
     position: absolute;
     z-index: 10;
 }
 
+/* Containers de carta: Adiciona a transição para suavizar o movimento de 'salto' */
+.figure10, .figure11, .figure12 {
+    position: absolute;
+    z-index: 10;
+    /* Suaviza o movimento de 'salto' no transform */
+    transition: transform 0.3s ease-in-out, z-index 0s, box-shadow 0.3s ease-in-out; 
+}
+
+/* POSIÇÕES INDIVIDUAIS */
 .fgBolinha {
     top: 10%; 
     left: 10%; 
@@ -179,25 +200,24 @@ body {
     animation: piscar2 8s infinite ease-in-out 8.7s; 
 }
 
+/* Posições Originais das Cartas de Hover */
 .figure10 {
     top: 42%; 
     left: 60%; 
-    transform: translate(-50%, -50%);  
+    transform: translate(-50%, -50%); 
 }
 
 .figure11 {
     top: 42%; 
     left: 70%; 
     transform: translate(-50%, -50%);
-    position: absolute;
     z-index: 15;
-  
 }
 
 .figure12 {
     top: 42%; 
     left: 80%; 
-    transform: translate(-50%, -50%);  
+    transform: translate(-50%, -50%); 
 }
 
 .figure13 {
@@ -208,7 +228,6 @@ body {
     z-index: 8;
     opacity: 0.7;
     border-radius: 50%;
-    
 }
 
 .figure14 {
@@ -219,59 +238,62 @@ body {
     z-index: 8;
     opacity: 0.7;
     border-radius: 50%;
-    
 }
 
-.figure10:hover{
-    top: 42%; 
-    left: 60%;
-    width: 450px; 
-    transform: translate(-50%, -50%);
-    
+/* ---------------------------------------------------- */
+/* --- ESTADOS HOVER (BRILHO ANIMADO NA IMAGEM) --- */
+/* ---------------------------------------------------- */
 
+.figure10:hover {
+    z-index: 100;
+    /* Move para cima, mantendo a centralização original */
+    transform: translate(-50%, calc(-50% - 15px)); 
 }
 
 .figure10 img:hover {
     width: 300px; 
     height: auto; 
-    transform: rotate(-4deg);
+    /* 🔑 NOVO: Aplica a animação de brilho no formato da imagem */
+    animation: pulsarBrilho 3.5s infinite alternate ease-in-out;
+    transform: scale(1.1) rotate(-4deg); 
     max-width: 100%;
 }
 
 
-.figure11:hover{
-    top: 42%; 
-    left: 73%;
-    width: 450px; 
-    transform: translate(-50%, -50%);
-    
-
+.figure11:hover {
+    z-index: 100;
+    /* Move para cima, mantendo a centralização original */
+    transform: translate(-50%, calc(-50% - 15px));
 }
 
 .figure11 img:hover {
     width: 310px; 
     height: auto; 
+    /* 🔑 NOVO: Aplica a animação de brilho no formato da imagem */
+    animation: pulsarBrilho 3.5s infinite alternate ease-in-out;
+    transform: scale(1.1);
     max-width: 100%;
 }
 
 
-.figure12:hover{
-    top: 43%; 
-    left: 85%;
-    width: 350px; 
-    transform: translate(-50%, -50%);
-    
-
+.figure12:hover {
+    z-index: 100;
+    /* Move para cima, mantendo a centralização original */
+    transform: translate(-50%, calc(-50% - 15px));
 }
 
 .figure12 img:hover {
     width: 300px; 
     height: auto; 
-    transform: rotate(4deg);
+    /* 🔑 NOVO: Aplica a animação de brilho no formato da imagem */
+    animation: pulsarBrilho 3.5s infinite alternate ease-in-out;
+    transform: scale(1.1) rotate(4deg);
     max-width: 100%;
 }
 
-/* animações */
+/* ---------------------------------------------------- */
+/* --- ANIMAÇÕES (KEYFRAMES) --- */
+/* ---------------------------------------------------- */
 @keyframes piscar {
     0%,
     100% {
@@ -295,5 +317,33 @@ body {
     50% {
         transform: scale(0.8);
         opacity: 0.1;
+    }
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); 
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 🔑 NOVO KEYFRAME: ANIMAÇÃO DO BRILHO AO PASSAR O MOUSE */
+@keyframes pulsarBrilho {
+    0% {
+        /* Brilho suave (começa em 0 para garantir que não haja brilho quando não está em hover) */
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 5)); 
+    }
+    50% {
+        /* Brilho máximo e expandido */
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 5)); 
+    }
+    100% {
+        /* Retorna ao brilho suave */
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 4)); 
     }
 }
