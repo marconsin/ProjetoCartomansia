@@ -1,6 +1,5 @@
 /* removendo margens padrões */
 * {
-    /* O !important ajuda a garantir que o Bootstrap não adicione margens indesejadas */
     padding: 0 !important;
     margin: 0 !important; 
     box-sizing: border-box;
@@ -26,7 +25,7 @@ body {
 }
 
 .linkMenu {
-    /* GRADIENT NO TEXTO */
+    /* texto gradiante */
     background-image: linear-gradient(
         to bottom, rgb(252, 252, 252), rgb(161, 126, 211) 
     );
@@ -34,7 +33,23 @@ body {
     -webkit-text-fill-color: transparent; 
     
     text-decoration: none;
-    font-size: 30px;
+    font-size: 23px;
+    padding: 5px 0;
+    font-family: "Croissant One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.linkMenu:hover {
+    /* texto gradiante */
+    background-image: linear-gradient(
+        to bottom, rgb(255, 255, 255), rgb(255, 255, 255) 
+    );
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    
+    text-decoration: none;
+    font-size: 23px;
     padding: 5px 0;
     font-family: "Croissant One", serif;
     font-weight: 400;
@@ -47,10 +62,7 @@ body {
     width: 100%;
 }
 
-/* ---------------------------------------------------- */
-/* --- ESTILOS DE TAMANHO E TRANSIÇÃO (FLUIDEZ) --- */
-/* ---------------------------------------------------- */
-
+/* elementos soltos */
 .fgBolinha img, 
 .fgBolinha2 img, 
 .fgBolinha3 img, 
@@ -86,12 +98,12 @@ body {
     max-width: 100%;
 }
 
-/* CARTAS DE HOVER - TRANSIÇÃO */
+/* cartas */
 .figure10 img, .figure12 img {
     width: 220px; 
     height: auto; 
     max-width: 100%;
-    /* Transição para suavizar a mudança de tamanho, rotação e filtro */
+    /* transição */
     transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, filter 0.3s ease-in-out; 
 }
 
@@ -99,18 +111,18 @@ body {
     width: 250px; 
     height: auto; 
     max-width: 100%;
-    /* Transição para suavizar a mudança de tamanho, rotação e filtro */
+    /* transição */
     transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-/* FIGURAS DE FUNDO COM BLUR */
+/* blur */
 .figure13 img, .figure14 img {
     width: 1050px; 
     height: auto; 
     max-width: 100%;
-    filter: blur(10px); /* Efeito Desfoque */
     opacity: 0.7;
     border-radius: 30%;
+    animation: pulsarBrilho 4.5s infinite alternate ease-in-out;
 }
 
 .fgBolinha img, 
@@ -120,24 +132,22 @@ body {
     animation: flutuar 5s ease-in-out infinite; 
 }
 
-/* ---------------------------------------------------- */
-/* --- POSICIONAMENTO E TRANSIÇÃO DO CONTAINER --- */
-/* ---------------------------------------------------- */
+/* containers */
 
 .fgBolinha, .fgBolinha2, .fgBolinha3, .fgBolinha4, .fgElemento, .figure6, .figure7, .figure8, .figure9 {
     position: absolute;
     z-index: 10;
 }
 
-/* Containers de carta: Adiciona a transição para suavizar o movimento de 'salto' */
+/* containers de carta */
 .figure10, .figure11, .figure12 {
     position: absolute;
     z-index: 10;
-    /* Suaviza o movimento de 'salto' no transform */
+    /* suavizando o movimento */
     transition: transform 0.3s ease-in-out, z-index 0s, box-shadow 0.3s ease-in-out; 
 }
 
-/* POSIÇÕES INDIVIDUAIS */
+/* random positions */
 .fgBolinha {
     top: 10%; 
     left: 10%; 
@@ -200,7 +210,7 @@ body {
     animation: piscar2 8s infinite ease-in-out 8.7s; 
 }
 
-/* Posições Originais das Cartas de Hover */
+/* cartas hover */
 .figure10 {
     top: 42%; 
     left: 60%; 
@@ -228,6 +238,7 @@ body {
     z-index: 8;
     opacity: 0.7;
     border-radius: 50%;
+    filter: blur(50px);
 }
 
 .figure14 {
@@ -238,11 +249,10 @@ body {
     z-index: 8;
     opacity: 0.7;
     border-radius: 50%;
+    filter: blur(50px);
 }
 
-/* ---------------------------------------------------- */
-/* --- ESTADOS HOVER (BRILHO ANIMADO NA IMAGEM) --- */
-/* ---------------------------------------------------- */
+/* hovers */
 
 .figure10:hover {
     z-index: 100;
@@ -251,10 +261,9 @@ body {
 }
 
 .figure10 img:hover {
-    width: 300px; 
+    width: 280px; 
     height: auto; 
-    /* 🔑 NOVO: Aplica a animação de brilho no formato da imagem */
-    animation: pulsarBrilho 3.5s infinite alternate ease-in-out;
+    animation: pulsarBrilho 2.5s infinite alternate ease-in-out;
     transform: scale(1.1) rotate(-4deg); 
     max-width: 100%;
 }
@@ -262,15 +271,13 @@ body {
 
 .figure11:hover {
     z-index: 100;
-    /* Move para cima, mantendo a centralização original */
     transform: translate(-50%, calc(-50% - 15px));
 }
 
 .figure11 img:hover {
-    width: 310px; 
-    height: auto; 
-    /* 🔑 NOVO: Aplica a animação de brilho no formato da imagem */
-    animation: pulsarBrilho 3.5s infinite alternate ease-in-out;
+    width: 280px; 
+    height: auto;
+    animation: pulsarBrilho 2.5s infinite alternate ease-in-out;
     transform: scale(1.1);
     max-width: 100%;
 }
@@ -278,22 +285,18 @@ body {
 
 .figure12:hover {
     z-index: 100;
-    /* Move para cima, mantendo a centralização original */
     transform: translate(-50%, calc(-50% - 15px));
 }
 
 .figure12 img:hover {
-    width: 300px; 
-    height: auto; 
-    /* 🔑 NOVO: Aplica a animação de brilho no formato da imagem */
-    animation: pulsarBrilho 3.5s infinite alternate ease-in-out;
+    width: 280px; 
+    height: auto;
+    animation: pulsarBrilho 2.5s infinite alternate ease-in-out;
     transform: scale(1.1) rotate(4deg);
     max-width: 100%;
 }
 
-/* ---------------------------------------------------- */
-/* --- ANIMAÇÕES (KEYFRAMES) --- */
-/* ---------------------------------------------------- */
+/* animações */
 @keyframes piscar {
     0%,
     100% {
@@ -336,14 +339,14 @@ body {
 @keyframes pulsarBrilho {
     0% {
         /* Brilho suave (começa em 0 para garantir que não haja brilho quando não está em hover) */
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 5)); 
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 5)); 
     }
     50% {
         /* Brilho máximo e expandido */
-        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 5)); 
+        filter: drop-shadow(0 0 35px rgba(255, 255, 255, 5)); 
     }
     100% {
         /* Retorna ao brilho suave */
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 4)); 
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 4)); 
     }
 }
