@@ -69,7 +69,9 @@ body {
 .fgBolinha4 img {
     width: 30px; 
     height: auto; 
-    max-width: 100%; 
+    max-width: 100%;
+    border-radius: 70%;
+    filter: blur(5px); 
 }
 
 .fgElemento img {
@@ -178,7 +180,7 @@ body {
 
 .fgElemento {
     top: 50%; 
-    left: 50%; 
+    left: 70%; 
     transform: translate(-50%, -50%); 
     animation: piscar 6s infinite ease-in-out 3.7s;
 }
@@ -300,12 +302,12 @@ body {
 @keyframes piscar {
     0%,
     100% {
-        transform: scale(0.9);
+        transform: translate(-50%, -50%) scale(0.9); /* INCLUI o translate de volta */
         opacity: 0.3;
     }
 
     50% {
-        transform: scale(0.8);
+        transform: translate(-50%, -50%) scale(0.8); /* INCLUI o translate de volta */
         opacity: 0.1;
     }
 }
@@ -325,13 +327,15 @@ body {
 
 @keyframes flutuar {
     0% {
-        transform: translateY(0);
+        /* (0) para o flutuar é combinado com o (-50%, -50%) do posicionamento */
+        transform: translate(-50%, -50%); 
     }
     50% {
-        transform: translateY(-5px); 
+        /* o -5px do flutuar é adicionado ao -50% inicial, mantendo o centramento X */
+        transform: translate(-50%, calc(-50% - 5px)); 
     }
     100% {
-        transform: translateY(0);
+        transform: translate(-50%, -50%);
     }
 }
 
