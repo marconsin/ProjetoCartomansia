@@ -8,77 +8,117 @@
     font-style: normal;
 }
 
-
 body {
     position: relative;
     overflow-x: hidden; 
-}
-
-/* opções para trocar de tela */
-.menuSuperior {
-    position: absolute;
-    z-index: 100; 
-    top: 20px; 
-    right: 20px; 
-    display: flex; 
-    gap: 30px; 
-}
-
-.linkMenu {
-    /* texto gradiante */
-    background-image: linear-gradient(
-        to bottom, rgb(252, 252, 252), rgb(161, 126, 211) 
-    );
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    
-    text-decoration: none;
-    font-size: 23px;
-    padding: 5px 0;
-    font-family: "Croissant One", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.linkMenu:hover {
-    /* texto gradiante */
-    background-image: linear-gradient(
-        to bottom, rgb(255, 255, 255), rgb(255, 255, 255) 
-    );
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    
-    text-decoration: none;
-    font-size: 23px;
-    padding: 5px 0;
-    font-family: "Croissant One", serif;
-    font-weight: 400;
-    font-style: normal;
+    background-color: #000; 
 }
 
 /* imagem fundo */
 .img-fundo {
     display: block; 
     width: 100%;
+    min-height: 100vh; 
+    object-fit: cover;
 }
 
-/* elementos soltos */
-.fgBolinha img, 
-.fgBolinha2 img, 
-.fgBolinha3 img, 
-.fgBolinha4 img {
-    width: 30px; 
+/* --- ESTILOS DO MENU MÍSTICO --- */
+.menu-mistico {
+    position: absolute;
+    top: 25%; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-icones {
+    display: flex;
+    gap: 50px; 
+    align-items: center;
+}
+
+.container-icones .item-menu:nth-child(2) {
+    transform: translateY(-30px); 
+}
+
+.item-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(236, 210, 127); 
+    transition: all 0.4s ease;
+    cursor: pointer;
+    background: transparent;
+}
+
+.icone-wrapper {
+    font-size: 24px;
+    margin-bottom: 8px !important; 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0 !important; 
+}
+
+.item-menu span {
+    font-family: "Croissant One", serif; 
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+    padding: 0 !important;
+}
+
+.item-menu:hover .icone-wrapper {
+    transform: translateY(-5px) scale(1.1); 
+    border-color: #ffd700; 
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); 
+    color: #ffd700;
+}
+
+.item-menu:hover span {
+    opacity: 1;
+    color: #ffd700; 
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.item-menu i {
+    color: rgb(214, 180, 105);
+    transition: color 0.3s;
+}
+.item-menu:hover i {
+    color: #ffd700;
+}
+
+/* --- ELEMENTOS GERAIS --- */
+
+.fgTitulo img {
+    width: 400px; 
+    height: auto; 
+    max-width: 100%;
+}
+
+/* elementos soltos (bolinhas) - Adicionado 6 a 10 */
+.fgBolinha img, .fgBolinha2 img, .fgBolinha3 img, .fgBolinha4 img, .fgBolinha5 img,
+.fgBolinha6 img, .fgBolinha7 img, .fgBolinha8 img, .fgBolinha9 img, .fgBolinha10 img {
+    width: 20px; 
     height: auto; 
     max-width: 100%;
     border-radius: 70%;
     filter: blur(5px); 
-}
-
-.fgElemento img {
-    width: 350px; 
-    height: auto; 
-    max-width: 100%;
-    animation: piscar 6s infinite ease-in-out 3.7s; 
 }
 
 .figure6 img {
@@ -102,24 +142,22 @@ body {
 
 /* cartas */
 .figure10 img, .figure12 img {
-    width: 220px; 
+    width: 260px; 
     height: auto; 
     max-width: 100%;
-    /* transição */
     transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, filter 0.3s ease-in-out; 
 }
 
 .figure11 img {
-    width: 250px; 
+    width: 300px; 
     height: auto; 
     max-width: 100%;
-    /* transição */
     transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 /* blur */
 .figure13 img, .figure14 img {
-    width: 1050px; 
+    width: 400px; 
     height: auto; 
     max-width: 100%;
     opacity: 0.7;
@@ -127,16 +165,17 @@ body {
     animation: pulsarBrilho 4.5s infinite alternate ease-in-out;
 }
 
-.fgBolinha img, 
-.fgBolinha2 img, 
-.fgBolinha3 img, 
-.fgBolinha4 img {
+/* Animação de flutuar nas bolinhas - Adicionado 6 a 10 */
+.fgBolinha img, .fgBolinha2 img, .fgBolinha3 img, .fgBolinha4 img, .fgBolinha5 img,
+.fgBolinha6 img, .fgBolinha7 img, .fgBolinha8 img, .fgBolinha9 img, .fgBolinha10 img {
     animation: flutuar 5s ease-in-out infinite; 
 }
 
-/* containers */
-
-.fgBolinha, .fgBolinha2, .fgBolinha3, .fgBolinha4, .fgElemento, .figure6, .figure7, .figure8, .figure9 {
+/* containers - Adicionado 6 a 10 */
+.fgTitulo, 
+.fgBolinha, .fgBolinha2, .fgBolinha3, .fgBolinha4, .fgBolinha5,
+.fgBolinha6, .fgBolinha7, .fgBolinha8, .fgBolinha9, .fgBolinha10,
+.figure6, .figure7, .figure8, .figure9 {
     position: absolute;
     z-index: 10;
 }
@@ -145,212 +184,74 @@ body {
 .figure10, .figure11, .figure12 {
     position: absolute;
     z-index: 10;
-    /* suavizando o movimento */
     transition: transform 0.3s ease-in-out, z-index 0s, box-shadow 0.3s ease-in-out; 
 }
 
-/* random positions */
-.fgBolinha {
-    top: 10%; 
-    left: 10%; 
-    transform: translate(-50%, -50%); 
-    animation: piscar 2s infinite ease-in-out 1.7s;
-}
+/* --- POSICIONAMENTO --- */
 
-.fgBolinha2 {
-    top: 10%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    animation: piscar 8s infinite ease-in-out 8.7s;
-}
-
-.fgBolinha3 {
-    top: 20%; 
-    left: 70%; 
-    transform: translate(-50%, -50%); 
-    animation: piscar 10s infinite ease-in-out 3.7s;
-}
-
-.fgBolinha4 {
-    top: 50%; 
-    left: 10%; 
-    transform: translate(-50%, -50%); 
-    animation: piscar 4s infinite ease-in-out 3.7s;
-}
-
-.fgElemento {
-    top: 50%; 
-    left: 70%; 
-    transform: translate(-50%, -50%); 
-    animation: piscar 6s infinite ease-in-out 3.7s;
-}
-
-.figure6 {
-    top: 73%; 
-    left: 6%; 
+.fgTitulo {
+    top: 11%; 
+    left: 51%; 
     transform: translate(-50%, -50%); 
 }
 
-.figure7 {
-    top: 69%; 
-    left: 2%; 
-    transform: translate(-50%, -50%); 
-    animation: piscar2 12s infinite ease-in-out 4.7s; 
-}
+/* Bolinhas Originais */
+.fgBolinha { top: 10%; left: 10%; transform: translate(-50%, -50%); animation: piscar 2s infinite ease-in-out 1.7s; }
+.fgBolinha2 { top: 30%; left: 90%; transform: translate(-50%, -50%); animation: piscar 8s infinite ease-in-out 8.7s; }
+.fgBolinha3 { top: 20%; left: 70%; transform: translate(-50%, -50%); animation: piscar 10s infinite ease-in-out 2.7s; }
+.fgBolinha4 { top: 50%; left: 10%; transform: translate(-50%, -50%); animation: piscar 4s infinite ease-in-out 3.7s; }
+.fgBolinha5 { top: 80%; left: 80%; transform: translate(-50%, -50%); animation: piscar 6s infinite ease-in-out 5.7s; }
 
-.figure8 {
-    top: 60%; 
-    left: 15%; 
-    transform: translate(-50%, -50%); 
-    animation: piscar2 6s infinite ease-in-out 3.7s; 
-}
-
-.figure9 {
-    top: 50%; 
-    left: 12%; 
-    transform: translate(-50%, -50%); 
-    animation: piscar2 8s infinite ease-in-out 8.7s; 
-}
-
-/* cartas hover */
-.figure10 {
-    top: 42%; 
-    left: 60%; 
-    transform: translate(-50%, -50%); 
-}
-
-.figure11 {
-    top: 42%; 
-    left: 70%; 
-    transform: translate(-50%, -50%);
-    z-index: 15;
-}
-
-.figure12 {
-    top: 42%; 
-    left: 80%; 
-    transform: translate(-50%, -50%); 
-}
-
-.figure13 {
-    top: 40%; 
-    left: 70%; 
-    transform: translate(-50%, -50%);
-    position: absolute;
-    z-index: 8;
-    opacity: 0.7;
-    border-radius: 50%;
-    filter: blur(50px);
-}
-
-.figure14 {
-    top: 50%; 
-    left: 70%; 
-    transform: translate(-50%, -50%);
-    position: absolute;
-    z-index: 8;
-    opacity: 0.7;
-    border-radius: 50%;
-    filter: blur(50px);
-}
-
-/* hovers */
-
-.figure10:hover {
-    z-index: 100;
-    /* Move para cima, mantendo a centralização original */
-    transform: translate(-50%, calc(-50% - 15px)); 
-}
-
-.figure10 img:hover {
-    width: 280px; 
-    height: auto; 
-    animation: pulsarBrilho 2.5s infinite alternate ease-in-out;
-    transform: scale(1.1) rotate(-4deg); 
-    max-width: 100%;
-}
+/* NOVAS BOLINHAS ESPALHADAS */
+.fgBolinha6 { top: 85%; left: 20%; transform: translate(-50%, -50%); animation: piscar 7s infinite ease-in-out 1s; }
+.fgBolinha7 { top: 60%; left: 85%; transform: translate(-50%, -50%); animation: piscar 3s infinite ease-in-out 0.5s; }
+.fgBolinha8 { top: 5%; left: 40%; transform: translate(-50%, -50%); animation: piscar 9s infinite ease-in-out 4s; }
+.fgBolinha9 { top: 40%; left: 25%; transform: translate(-50%, -50%); animation: piscar 11s infinite ease-in-out 2s; }
+.fgBolinha10 { top: 92%; left: 55%; transform: translate(-50%, -50%); animation: piscar 5s infinite ease-in-out 6s; }
 
 
-.figure11:hover {
-    z-index: 100;
-    transform: translate(-50%, calc(-50% - 15px));
-}
+.figure6 { top: 73%; left: 6%; transform: translate(-50%, -50%); }
+.figure7 { top: 69%; left: 2%; transform: translate(-50%, -50%); animation: piscar2 12s infinite ease-in-out 4.7s; }
+.figure8 { top: 60%; left: 15%; transform: translate(-50%, -50%); animation: piscar2 6s infinite ease-in-out 3.7s; }
+.figure9 { top: 50%; left: 12%; transform: translate(-50%, -50%); animation: piscar2 8s infinite ease-in-out 8.7s; }
 
-.figure11 img:hover {
-    width: 280px; 
-    height: auto;
-    animation: pulsarBrilho 2.5s infinite alternate ease-in-out;
-    transform: scale(1.1);
-    max-width: 100%;
-}
+/* cartas position */
+.figure10 { top: 55%; left: 42%; transform: translate(-50%, -50%); }
+.figure11 { top: 55%; left: 50%; transform: translate(-50%, -50%); z-index: 15; }
+.figure12 { top: 55%; left: 58%; transform: translate(-50%, -50%); }
 
+.figure13 { top: 50%; left: 50%; transform: translate(-50%, -50%); position: absolute; z-index: 8; opacity: 0.7; border-radius: 50%; filter: blur(50px); }
+.figure14 { top: 62%; left: 50%; transform: translate(-50%, -50%); position: absolute; z-index: 8; opacity: 0.7; border-radius: 50%; filter: blur(50px); }
 
-.figure12:hover {
-    z-index: 100;
-    transform: translate(-50%, calc(-50% - 15px));
-}
+/* --- HOVERS CARTAS --- */
 
-.figure12 img:hover {
-    width: 280px; 
-    height: auto;
-    animation: pulsarBrilho 2.5s infinite alternate ease-in-out;
-    transform: scale(1.1) rotate(4deg);
-    max-width: 100%;
-}
+.figure10:hover { z-index: 100; transform: translate(-50%, calc(-50% - 15px)); }
+.figure10 img:hover { width: 280px; height: auto; animation: pulsarBrilho 2.5s infinite alternate ease-in-out; transform: scale(1.1) rotate(-4deg); max-width: 100%; }
+.figure11:hover { z-index: 100; transform: translate(-50%, calc(-50% - 15px)); }
+.figure11 img:hover { width: 300px; height: auto; animation: pulsarBrilho 2.5s infinite alternate ease-in-out; transform: scale(1.1); max-width: 100%; }
+.figure12:hover { z-index: 100; transform: translate(-50%, calc(-50% - 15px)); }
+.figure12 img:hover { width: 280px; height: auto; animation: pulsarBrilho 2.5s infinite alternate ease-in-out; transform: scale(1.1) rotate(4deg); max-width: 100%; }
 
-/* animações */
+/* --- ANIMAÇÕES --- */
+
 @keyframes piscar {
-    0%,
-    100% {
-        transform: translate(-50%, -50%) scale(0.9); /* INCLUI o translate de volta */
-        opacity: 0.3;
-    }
-
-    50% {
-        transform: translate(-50%, -50%) scale(0.8); /* INCLUI o translate de volta */
-        opacity: 0.1;
-    }
+    0%, 100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.3; }
+    50% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.1; }
 }
 
 @keyframes piscar2 {
-    0%,
-    100% {
-        transform: scale(0.9);
-        opacity: 1;
-    }
-
-    50% {
-        transform: scale(0.8);
-        opacity: 0.1;
-    }
+    0%, 100% { transform: translate(-50%, -50%) scale(0.9); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.1; }
 }
 
 @keyframes flutuar {
-    0% {
-        /* (0) para o flutuar é combinado com o (-50%, -50%) do posicionamento */
-        transform: translate(-50%, -50%); 
-    }
-    50% {
-        /* o -5px do flutuar é adicionado ao -50% inicial, mantendo o centramento X */
-        transform: translate(-50%, calc(-50% - 5px)); 
-    }
-    100% {
-        transform: translate(-50%, -50%);
-    }
+    0% { transform: translate(-50%, -50%); }
+    50% { transform: translate(-50%, calc(-50% - 5px)); }
+    100% { transform: translate(-50%, -50%); }
 }
 
-/* 🔑 NOVO KEYFRAME: ANIMAÇÃO DO BRILHO AO PASSAR O MOUSE */
 @keyframes pulsarBrilho {
-    0% {
-        /* Brilho suave (começa em 0 para garantir que não haja brilho quando não está em hover) */
-        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 5)); 
-    }
-    50% {
-        /* Brilho máximo e expandido */
-        filter: drop-shadow(0 0 35px rgba(255, 255, 255, 5)); 
-    }
-    100% {
-        /* Retorna ao brilho suave */
-        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 4)); 
-    }
+    0% { filter: drop-shadow(0 0 20px rgb(196, 172, 122)); }
+    50% { filter: drop-shadow(0 0 35px rgb(158, 144, 115)); }
+    100% { filter: drop-shadow(0 0 20px rgb(177, 157, 114)); }
 }
