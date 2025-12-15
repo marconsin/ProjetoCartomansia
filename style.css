@@ -1,31 +1,40 @@
-/* removendo margens padrões */
+/* reset geral */
 * {
-    padding: 0 !important;
-    margin: 0 !important; 
+    padding: 0;
+    margin: 0; 
     box-sizing: border-box;
-    font-family: "Ewert", serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-weight: 400;
-    font-style: normal;
 }
 
 body {
     position: relative;
     overflow-x: hidden; 
+    background: url('https://imgur.com/aSOXdqK.png') no-repeat center center fixed;
+    background-size: cover;
     background-color: #000; 
+    color: #fff;
+    min-height: 100vh;
 }
 
-/* imagem fundo */
-.img-fundo {
-    display: block; 
+.container {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* hero container */
+.hero-wrapper {
+    position: relative;
     width: 100%;
-    min-height: 100vh; 
-    object-fit: cover;
+    height: 100vh;
+    overflow: visible; 
 }
 
-/* --- ESTILOS DO MENU MÍSTICO --- */
+/* menu navigation */
 .menu-mistico {
     position: absolute;
-    top: 25%; 
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000; 
@@ -34,14 +43,19 @@ body {
     justify-content: center;
 }
 
+.menu-home { top: 30%; }
+.menu-interno { top: 30px; }
+
 .container-icones {
     display: flex;
-    gap: 50px; 
+    gap: 40px; 
     align-items: center;
 }
 
-.container-icones .item-menu:nth-child(2) {
-    transform: translateY(-30px); 
+/* arco menu */
+.container-icones .item-menu:nth-child(2),
+.container-icones .item-menu:nth-child(3) {
+    transform: translateY(-25px); 
 }
 
 .item-menu {
@@ -49,7 +63,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: rgb(236, 210, 127); 
+    color: #f3dbaf; 
     transition: all 0.4s ease;
     cursor: pointer;
     background: transparent;
@@ -58,24 +72,24 @@ body {
 .icone-wrapper {
     font-size: 24px;
     margin-bottom: 8px !important; 
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s;
     width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(215, 239, 138, 0.6);
     background: rgba(0, 0, 0, 0.2);
     padding: 0 !important; 
 }
 
 .item-menu span {
     font-family: "Croissant One", serif; 
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    opacity: 0.8;
+    opacity: 0.9;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     transition: all 0.3s ease;
     padding: 0 !important;
@@ -83,175 +97,233 @@ body {
 
 .item-menu:hover .icone-wrapper {
     transform: translateY(-5px) scale(1.1); 
-    border-color: #ffd700; 
-    background: rgba(255, 215, 0, 0.1);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); 
-    color: #ffd700;
+    border-color: #fff; 
+    background: #79810c25;
+    box-shadow: 0 0 15px rgba(243, 255, 107, 0.4); 
+    color: #fff;
 }
 
 .item-menu:hover span {
     opacity: 1;
-    color: #ffd700; 
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    color: #fff; 
+    text-shadow: 0 0 10px rgba(255, 250, 112, 0.6);
 }
 
-.item-menu i {
-    color: rgb(214, 180, 105);
-    transition: color 0.3s;
-}
-.item-menu:hover i {
-    color: #ffd700;
-}
+/* assets flutuantes */
+.fgTitulo img { width: 400px; height: auto; max-width: 100%; }
 
-/* --- ELEMENTOS GERAIS --- */
-
-.fgTitulo img {
-    width: 400px; 
-    height: auto; 
-    max-width: 100%;
-}
-
-/* elementos soltos (bolinhas) - Adicionado 6 a 10 */
 .fgBolinha img, .fgBolinha2 img, .fgBolinha3 img, .fgBolinha4 img, .fgBolinha5 img,
 .fgBolinha6 img, .fgBolinha7 img, .fgBolinha8 img, .fgBolinha9 img, .fgBolinha10 img {
-    width: 20px; 
-    height: auto; 
-    max-width: 100%;
-    border-radius: 70%;
-    filter: blur(5px); 
+    width: 20px; height: auto; max-width: 100%; border-radius: 70%;
+    filter: blur(5px); animation: flutuar 5s ease-in-out infinite; 
 }
 
-.figure6 img {
-    width: 300px; 
-    height: auto; 
-    max-width: 100%;
-}
+.figure6 img { width: 300px; height: auto; max-width: 100%; }
+.figure7 img { width: 65px; height: auto; max-width: 100%; animation: piscar2 12s infinite ease-in-out 4.7s; }
+.figure8 img, .figure9 img { width: 80px; height: auto; max-width: 100%; }
 
-.figure7 img {
-    width: 65px; 
-    height: auto; 
-    max-width: 100%;
-    animation: piscar2 12s infinite ease-in-out 4.7s; 
+.figure10 img, .figure12 img { 
+    width: 260px; height: auto; max-width: 100%; 
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, filter 0.3s ease-in-out; 
 }
-
-.figure8 img, .figure9 img {
-    width: 80px; 
-    height: auto; 
-    max-width: 100%;
-}
-
-/* cartas */
-.figure10 img, .figure12 img {
-    width: 260px; 
-    height: auto; 
-    max-width: 100%;
+.figure11 img { 
+    width: 300px; height: auto; max-width: 100%; 
     transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, filter 0.3s ease-in-out; 
 }
 
-.figure11 img {
-    width: 300px; 
-    height: auto; 
-    max-width: 100%;
-    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, filter 0.3s ease-in-out;
+.figure13 img, .figure14 img { 
+    width: 400px; height: auto; max-width: 100%; 
+    opacity: 0.7; border-radius: 30%; 
+    animation: pulsarBrilho 4.5s infinite alternate ease-in-out; 
 }
 
-/* blur */
-.figure13 img, .figure14 img {
-    width: 400px; 
-    height: auto; 
-    max-width: 100%;
-    opacity: 0.7;
-    border-radius: 30%;
-    animation: pulsarBrilho 4.5s infinite alternate ease-in-out;
-}
-
-/* Animação de flutuar nas bolinhas - Adicionado 6 a 10 */
-.fgBolinha img, .fgBolinha2 img, .fgBolinha3 img, .fgBolinha4 img, .fgBolinha5 img,
-.fgBolinha6 img, .fgBolinha7 img, .fgBolinha8 img, .fgBolinha9 img, .fgBolinha10 img {
-    animation: flutuar 5s ease-in-out infinite; 
-}
-
-/* containers - Adicionado 6 a 10 */
-.fgTitulo, 
-.fgBolinha, .fgBolinha2, .fgBolinha3, .fgBolinha4, .fgBolinha5,
+/* posicionamento assets */
+.fgTitulo, .fgBolinha, .fgBolinha2, .fgBolinha3, .fgBolinha4, .fgBolinha5,
 .fgBolinha6, .fgBolinha7, .fgBolinha8, .fgBolinha9, .fgBolinha10,
-.figure6, .figure7, .figure8, .figure9 {
-    position: absolute;
-    z-index: 10;
+.figure6, .figure7, .figure8, .figure9, .figure10, .figure11, .figure12, .figure13, .figure14 {
+    position: absolute; z-index: 10;
 }
 
-/* containers de carta */
-.figure10, .figure11, .figure12 {
-    position: absolute;
-    z-index: 10;
-    transition: transform 0.3s ease-in-out, z-index 0s, box-shadow 0.3s ease-in-out; 
-}
+.fgTitulo { top: 11%; left: 51%; transform: translate(-50%, -50%); }
 
-/* --- POSICIONAMENTO --- */
-
-.fgTitulo {
-    top: 11%; 
-    left: 51%; 
-    transform: translate(-50%, -50%); 
-}
-
-/* Bolinhas Originais */
-.fgBolinha { top: 10%; left: 10%; transform: translate(-50%, -50%); animation: piscar 2s infinite ease-in-out 1.7s; }
-.fgBolinha2 { top: 30%; left: 90%; transform: translate(-50%, -50%); animation: piscar 8s infinite ease-in-out 8.7s; }
-.fgBolinha3 { top: 20%; left: 70%; transform: translate(-50%, -50%); animation: piscar 10s infinite ease-in-out 2.7s; }
-.fgBolinha4 { top: 50%; left: 10%; transform: translate(-50%, -50%); animation: piscar 4s infinite ease-in-out 3.7s; }
-.fgBolinha5 { top: 80%; left: 80%; transform: translate(-50%, -50%); animation: piscar 6s infinite ease-in-out 5.7s; }
-
-/* NOVAS BOLINHAS ESPALHADAS */
-.fgBolinha6 { top: 85%; left: 20%; transform: translate(-50%, -50%); animation: piscar 7s infinite ease-in-out 1s; }
-.fgBolinha7 { top: 60%; left: 85%; transform: translate(-50%, -50%); animation: piscar 3s infinite ease-in-out 0.5s; }
-.fgBolinha8 { top: 5%; left: 40%; transform: translate(-50%, -50%); animation: piscar 9s infinite ease-in-out 4s; }
-.fgBolinha9 { top: 40%; left: 25%; transform: translate(-50%, -50%); animation: piscar 11s infinite ease-in-out 2s; }
-.fgBolinha10 { top: 92%; left: 55%; transform: translate(-50%, -50%); animation: piscar 5s infinite ease-in-out 6s; }
-
+.fgBolinha { top: 10%; left: 10%; transform: translate(-50%, -50%); animation: piscar 2s infinite 1.7s; }
+.fgBolinha2 { top: 30%; left: 90%; transform: translate(-50%, -50%); animation: piscar 8s infinite 8.7s; }
+.fgBolinha3 { top: 20%; left: 70%; transform: translate(-50%, -50%); animation: piscar 10s infinite 2.7s; }
+.fgBolinha4 { top: 50%; left: 10%; transform: translate(-50%, -50%); animation: piscar 4s infinite 3.7s; }
+.fgBolinha5 { top: 80%; left: 80%; transform: translate(-50%, -50%); animation: piscar 6s infinite 5.7s; }
+.fgBolinha6 { top: 85%; left: 20%; transform: translate(-50%, -50%); animation: piscar 7s infinite 1s; }
+.fgBolinha7 { top: 60%; left: 85%; transform: translate(-50%, -50%); animation: piscar 3s infinite 0.5s; }
+.fgBolinha8 { top: 5%; left: 40%; transform: translate(-50%, -50%); animation: piscar 9s infinite 4s; }
+.fgBolinha9 { top: 40%; left: 25%; transform: translate(-50%, -50%); animation: piscar 11s infinite 2s; }
+.fgBolinha10 { top: 92%; left: 55%; transform: translate(-50%, -50%); animation: piscar 5s infinite 6s; }
 
 .figure6 { top: 73%; left: 6%; transform: translate(-50%, -50%); }
-.figure7 { top: 69%; left: 2%; transform: translate(-50%, -50%); animation: piscar2 12s infinite ease-in-out 4.7s; }
-.figure8 { top: 60%; left: 15%; transform: translate(-50%, -50%); animation: piscar2 6s infinite ease-in-out 3.7s; }
-.figure9 { top: 50%; left: 12%; transform: translate(-50%, -50%); animation: piscar2 8s infinite ease-in-out 8.7s; }
+.figure7 { top: 69%; left: 2%; transform: translate(-50%, -50%); }
+.figure8 { top: 60%; left: 15%; transform: translate(-50%, -50%); animation: piscar2 6s infinite 3.7s; }
+.figure9 { top: 50%; left: 12%; transform: translate(-50%, -50%); animation: piscar2 8s infinite 8.7s; }
 
-/* cartas position */
-.figure10 { top: 55%; left: 42%; transform: translate(-50%, -50%); }
-.figure11 { top: 55%; left: 50%; transform: translate(-50%, -50%); z-index: 15; }
-.figure12 { top: 55%; left: 58%; transform: translate(-50%, -50%); }
+.figure10 { top: 78%; left: 42%; transform: translate(-50%, -50%); }
+.figure11 { top: 78%; left: 50%; transform: translate(-50%, -50%); z-index: 15; }
+.figure12 { top: 78%; left: 58%; transform: translate(-50%, -50%); }
 
-.figure13 { top: 50%; left: 50%; transform: translate(-50%, -50%); position: absolute; z-index: 8; opacity: 0.7; border-radius: 50%; filter: blur(50px); }
-.figure14 { top: 62%; left: 50%; transform: translate(-50%, -50%); position: absolute; z-index: 8; opacity: 0.7; border-radius: 50%; filter: blur(50px); }
+.figure13 { top: 72%; left: 50%; transform: translate(-50%, -50%); z-index: 8; opacity: 0.7; filter: blur(50px); }
+.figure14 { top: 85%; left: 50%; transform: translate(-50%, -50%); z-index: 8; opacity: 0.7; filter: blur(50px); }
 
-/* --- HOVERS CARTAS --- */
-
+/* interatividade cartas */
 .figure10:hover { z-index: 100; transform: translate(-50%, calc(-50% - 15px)); }
-.figure10 img:hover { width: 280px; height: auto; animation: pulsarBrilho 2.5s infinite alternate ease-in-out; transform: scale(1.1) rotate(-4deg); max-width: 100%; }
+.figure10 img:hover { 
+    width: 265px; 
+    height: auto; 
+    animation: pulsarBrilho 2.5s infinite alternate ease-in-out; 
+    transform: scale(1.1) rotate(-4deg); 
+    max-width: 100%; 
+}
+
 .figure11:hover { z-index: 100; transform: translate(-50%, calc(-50% - 15px)); }
-.figure11 img:hover { width: 300px; height: auto; animation: pulsarBrilho 2.5s infinite alternate ease-in-out; transform: scale(1.1); max-width: 100%; }
+.figure11 img:hover { 
+    width: 295px; 
+    height: auto; 
+    animation: pulsarBrilho 2.5s infinite alternate ease-in-out; 
+    transform: scale(1.1); 
+    max-width: 100%; 
+}
+
 .figure12:hover { z-index: 100; transform: translate(-50%, calc(-50% - 15px)); }
-.figure12 img:hover { width: 280px; height: auto; animation: pulsarBrilho 2.5s infinite alternate ease-in-out; transform: scale(1.1) rotate(4deg); max-width: 100%; }
-
-/* --- ANIMAÇÕES --- */
-
-@keyframes piscar {
-    0%, 100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.3; }
-    50% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.1; }
+.figure12 img:hover { 
+    width: 265px; 
+    height: auto; 
+    animation: pulsarBrilho 2.5s infinite alternate ease-in-out; 
+    transform: scale(1.1) rotate(4deg); 
+    max-width: 100%; 
 }
 
-@keyframes piscar2 {
-    0%, 100% { transform: translate(-50%, -50%) scale(0.9); opacity: 1; }
-    50% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.1; }
+/* keyframes */
+@keyframes piscar { 0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.9); } 50% { opacity: 0.1; transform: translate(-50%, -50%) scale(0.8); } }
+@keyframes piscar2 { 0%, 100% { opacity: 1; transform: scale(0.9); } 50% { opacity: 0.1; transform: scale(0.8); } }
+@keyframes flutuar { 0% { transform: translate(-50%, -50%); } 50% { transform: translate(-50%, calc(-50% - 5px)); } 100% { transform: translate(-50%, -50%); } }
+@keyframes pulsarBrilho { 
+    0% { filter: drop-shadow(0 0 20px rgb(196, 172, 122)); } 
+    50% { filter: drop-shadow(0 0 35px rgb(158, 144, 115)); } 
+    100% { filter: drop-shadow(0 0 20px rgb(177, 157, 114)); } 
 }
 
-@keyframes flutuar {
-    0% { transform: translate(-50%, -50%); }
-    50% { transform: translate(-50%, calc(-50% - 5px)); }
-    100% { transform: translate(-50%, -50%); }
+/* styles gerais */
+.secao-conteudo {
+    position: relative; width: 100%; padding: 100px 20px;
+    background: transparent; text-align: center; z-index: 20;
 }
 
-@keyframes pulsarBrilho {
-    0% { filter: drop-shadow(0 0 20px rgb(196, 172, 122)); }
-    50% { filter: drop-shadow(0 0 35px rgb(158, 144, 115)); }
-    100% { filter: drop-shadow(0 0 20px rgb(177, 157, 114)); }
+.pagina-interna {
+    padding-top: 180px;
+    min-height: 100vh;
 }
+
+.titulo-secao {
+    font-family: "Cinzel Decorative", serif; font-size: 2.5rem; color: #e3d580;
+    margin-bottom: 30px !important; text-shadow: 0 0 20px rgba(227, 213, 128, 0.4);
+    display: inline-block; font-weight: 700;
+}
+
+.titulo-secao::after {
+    content: ''; display: block; width: 60px; height: 2px;
+    background: #e3d580; margin: 15px auto 0; box-shadow: 0 0 10px #e3d580;
+}
+
+.texto-mistico {
+    font-family: sans-serif; font-size: 1.1rem; line-height: 1.8;
+    color: #f0e6c0; max-width: 800px; margin: 0 auto 50px auto !important;
+}
+
+/* componentes equipe */
+.membro-wrapper {
+    display: flex; flex-direction: column; align-items: center;
+    margin-bottom: 50px !important; transition: transform 0.3s ease;
+}
+.membro-wrapper:hover { transform: translateY(-10px); }
+
+.foto-membro-borda {
+    width: 160px; height: 160px; margin-bottom: 15px !important; position: relative;
+}
+.foto-membro {
+    width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+    border: 2px solid #e3d580; box-shadow: 0 0 20px rgba(0,0,0,0.5); background-color: #1a1a1a;
+}
+.nome-membro {
+    font-family: "Cinzel Decorative", serif; font-size: 1.3rem;
+    color: #e3d580; margin-bottom: 5px !important; font-weight: 700;
+}
+.cargo-membro {
+    font-family: sans-serif; font-size: 0.9rem; color: #ccc;
+    text-transform: uppercase; letter-spacing: 2px;
+}
+
+/* componentes servicos */
+.card-servico {
+    background: rgba(20, 20, 20, 0.6); border: 1px solid rgba(227, 213, 128, 0.3);
+    border-radius: 15px; padding: 40px 20px; margin-bottom: 30px !important;
+    transition: all 0.3s ease; position: relative; overflow: hidden;
+}
+.card-servico:hover {
+    transform: translateY(-10px); border-color: #e3d580;
+    box-shadow: 0 0 25px rgba(227, 213, 128, 0.15); background: rgba(30, 30, 30, 0.8);
+}
+.card-servico.destaque {
+    border: 2px solid #e3d580; background: rgba(227, 213, 128, 0.05);
+}
+.icone-servico { font-size: 40px; color: #e3d580; margin-bottom: 20px !important; }
+.card-servico h3 {
+    font-family: "Cinzel Decorative", serif; color: #fff;
+    font-size: 1.5rem; margin-bottom: 15px !important;
+}
+.card-servico p {
+    color: #ccc; font-size: 0.95rem; margin-bottom: 25px !important; min-height: 60px;
+}
+.preco {
+    font-family: "Croissant One", serif; font-size: 1.8rem;
+    color: #e3d580; margin-bottom: 25px !important;
+}
+.btn-mistico {
+    display: inline-block; padding: 10px 30px; border: 1px solid #e3d580;
+    color: #e3d580; text-decoration: none; text-transform: uppercase;
+    font-size: 0.9rem; letter-spacing: 2px; transition: all 0.3s;
+}
+.btn-mistico:hover { background: #e3d580; color: #000; box-shadow: 0 0 15px rgba(227, 213, 128, 0.5); }
+
+/* depoimentos */
+.box-depoimento {
+    text-align: left; background: rgba(255, 255, 255, 0.03); padding: 30px;
+    border-radius: 10px; border-left: 3px solid #e3d580; margin-bottom: 30px !important;
+}
+.aspas { font-size: 20px; color: #e3d580; opacity: 0.5; margin-bottom: 15px !important; display: block; }
+.texto-depoimento { font-style: italic; color: #ddd; margin-bottom: 20px !important; }
+.autor-depoimento { font-family: "Cinzel Decorative", serif; color: #e3d580; font-weight: 700; }
+.estrelas { color: #ffd700; font-size: 12px; margin-top: 5px !important; }
+
+/* faq */
+.faq-item {
+    background: transparent; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0; text-align: left;
+}
+.faq-item h4 { font-family: "Cinzel Decorative", serif; color: #e3d580; font-size: 1.2rem; margin-bottom: 10px !important; }
+.faq-item p { color: #aaa; font-size: 0.95rem; margin: 0 !important; }
+
+/* footer api */
+.box-conselho { margin-top: 50px; padding: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+#conselho-texto { font-style: italic; color: #e3d580; font-size: 1.1rem; margin-top: 10px; min-height: 30px; }
+
+/* utils & decoracao */
+.bolinha-decorativa { position: absolute; width: 15px; height: 15px; z-index: 1; filter: blur(4px); animation: flutuar 6s ease-in-out infinite; opacity: 0.6; }
+.bolinha-decorativa img { width: 100%; height: auto; border-radius: 50%; }
+
+.js-scroll { opacity: 0; transform: translateY(40px); transition: all 1s ease-out; }
+.revelar { opacity: 1; transform: translateY(0); }
+
+/* social icons */
+.redes-sociais-wrapper { display: flex; gap: 30px; justify-content: center; margin-top: 30px; }
+.social-icon {
+    display: flex; justify-content: center; align-items: center;
+    width: 60px; height: 60px; font-size: 30px; color: #e3d580;
+    border: 2px solid #e3d580; border-radius: 50%; text-decoration: none;
+    transition: all 0.3s; background: rgba(0,0,0,0.3);
+}
+.social-icon:hover { color: #fff; background: #e3d580; transform: translateY(-5px); }
