@@ -38,9 +38,6 @@
         <figure class="fgBolinha5"><img src="https://imgur.com/H4QrfuZ.png"></figure>
         <figure class="fgBolinha6"><img src="https://imgur.com/H4QrfuZ.png"></figure>
         <figure class="fgBolinha7"><img src="https://imgur.com/H4QrfuZ.png"></figure>
-        <figure class="fgBolinha8"><img src="https://imgur.com/H4QrfuZ.png"></figure>
-        <figure class="fgBolinha9"><img src="https://imgur.com/H4QrfuZ.png"></figure>
-        <figure class="fgBolinha10"><img src="https://imgur.com/H4QrfuZ.png"></figure>
         
         <figure class="figure6"><img src="https://imgur.com/Pyfae6M.png"></figure>
         <figure class="figure7"><img src="https://imgur.com/UfvOnJz.png"></figure>
@@ -48,7 +45,6 @@
         <figure class="figure9"><img src="https://imgur.com/UfvOnJz.png"></figure>
         <figure class="figure13"><img src="https://imgur.com/H4QrfuZ.png"></figure>
         <figure class="figure14"><img src="https://imgur.com/H4QrfuZ.png"></figure>
-
         <figure class="figure10"><img src="https://imgur.com/X3ugnEo.png"></figure>
         <figure class="figure11"><img src="https://imgur.com/lePQfUe.png"></figure>
         <figure class="figure12"><img src="https://imgur.com/X3ugnEo.png"></figure>
@@ -67,6 +63,17 @@
             </div>
         </div>
     </section>
+
+    <div class="stars-middle-container">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-m sm-1">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-m sm-2">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-m sm-3">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-m sm-4">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-m sm-5">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-m sm-6">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-m sm-7">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-m sm-8">
+    </div>
 
     <section id="equipe" class="secao-conteudo">
         <div class="container">
@@ -94,16 +101,63 @@
         </div>
     </section>
 
-    <footer class="secao-conteudo" style="padding-top: 0;">
+    <section id="oraculo" class="secao-conteudo">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 js-scroll">
+                    <h2 class="titulo-secao">Horóscopo do Dia</h2>
+                    <p style="color: #e0dfbc; margin-bottom: 30px;">Conexão com os astros.</p>
+                    
+                    <div class="signos-grid">
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('aries')">♈ Áries</button>
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('touro')">♉ Touro</button>
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('gemeos')">♊ Gêmeos</button>
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('cancer')">♋ Câncer</button>
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('leao')">♌ Leão</button>
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('virgem')">♍ Virgem</button>
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('libra')">♎ Libra</button>
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('escorpiao')">♏ Escorpião</button>
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('sagitario')">♐ Sagitário</button>
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('capricornio')">♑ Capricórnio</button>
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('aquario')">♒ Aquário</button>
+                        <button class="signo-btn" onclick="buscarHoroscopoReal('peixes')">♓ Peixes</button>
+                    </div>
+
+                    <div id="resultado-horoscopo" class="box-resultado-mistico" style="display: none;">
+                        <h3 id="signo-titulo">Signo</h3>
+                        <div class="badges-api">
+                            <span class="badge-api">API: Horoscope Vercel</span>
+                            <span class="badge-api">Proxy: AllOrigins</span>
+                            <span class="badge-api">Traduzido: MyMemory</span>
+                        </div>
+                        <p id="signo-texto">Aguardando conexão...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="secao-conteudo" style="padding-top: 0; position: relative; z-index: 20;">
         <div class="container">
             <div class="box-conselho js-scroll">
                 <i class="fa-solid fa-moon" style="color:#e3d580; margin-bottom: 10px;"></i>
-                <h4>Conselho do Dia</h4>
+                <h4>Conselho do Universo</h4>
                 <p id="conselho-texto">Sintonizando...</p>
             </div>
             <p style="color: #666; font-size: 0.8rem; margin-top: 30px;">© 2025 Trago em 7 Dias.</p>
         </div>
     </footer>
+
+    <div class="stars-bottom-container">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-b sb-1">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-b sb-2">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-b sb-3">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-b sb-4">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-b sb-5">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-b sb-6">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-b sb-7">
+        <img src="https://imgur.com/H4QrfuZ.png" class="star-b sb-8">
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -327,3 +327,102 @@ body {
     transition: all 0.3s; background: rgba(0,0,0,0.3);
 }
 .social-icon:hover { color: #fff; background: #e3d580; transform: translateY(-5px); }
+
+
+/* adições do thiagão */
+.signos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+.signo-btn {
+    background: rgba(20, 20, 20, 0.6);
+    border: 1px solid rgba(227, 213, 128, 0.3);
+    color: #e3d580;
+    padding: 15px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Cinzel Decorative", serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    backdrop-filter: blur(5px);
+}
+.signo-btn:hover {
+    background: rgba(227, 213, 128, 0.2);
+    border-color: #e3d580;
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(227, 213, 128, 0.3);
+    color: #fff;
+}
+.box-resultado-mistico {
+    background: rgba(10, 10, 10, 0.9);
+    border: 2px solid #e3d580;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+    animation: pulsarBrilho 4s infinite alternate;
+    position: relative;
+    z-index: 50;
+    min-height: 150px;
+}
+.box-resultado-mistico h3 {
+    font-family: "Cinzel Decorative", serif;
+    color: #e3d580;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+.badges-api {
+    display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;
+}
+.badge-api {
+    font-size: 0.65rem; background: rgba(255,255,255,0.1); padding: 2px 6px;
+    border-radius: 4px; color: #888; border: 1px solid rgba(255,255,255,0.1);
+}
+#signo-texto { color: #f0e6c0; font-size: 1.1rem; line-height: 1.6; font-style: italic; }
+
+.stars-middle-container {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    height: 150vh; 
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+.star-m {
+    position: absolute; width: 15px; height: auto; border-radius: 50%;
+    filter: blur(3px); opacity: 0.5; animation: piscar 5s infinite ease-in-out;
+}
+.sm-1 { top: 10%; left: 5%; animation-delay: 0s; }
+.sm-2 { top: 20%; left: 90%; animation-delay: 1.5s; width: 20px; }
+.sm-3 { top: 40%; left: 15%; animation-delay: 2.5s; }
+.sm-4 { top: 55%; left: 80%; animation-delay: 0.5s; width: 10px; }
+.sm-5 { top: 70%; left: 30%; animation-delay: 3s; }
+.sm-6 { top: 85%; left: 70%; animation-delay: 1s; width: 18px; }
+.sm-7 { top: 30%; left: 50%; animation-delay: 2s; }
+.sm-8 { top: 60%; left: 10%; animation-delay: 3.5s; }
+
+
+
+
+.stars-bottom-container {
+    position: absolute; bottom: 0; left: 0; width: 100%; height: 100vh;
+    pointer-events: none; z-index: 1; overflow: hidden;
+}
+.star-b {
+    position: absolute; width: 15px; height: auto; border-radius: 50%;
+    filter: blur(3px); opacity: 0.6; animation: piscar 4s infinite ease-in-out;
+}
+.sb-1 { bottom: 5%; left: 10%; animation-delay: 0s; }
+.sb-2 { bottom: 15%; left: 85%; animation-delay: 1s; width: 20px; }
+.sb-3 { bottom: 25%; left: 40%; animation-delay: 2s; }
+.sb-4 { bottom: 10%; left: 60%; animation-delay: 3s; width: 10px;}
+.sb-5 { bottom: 40%; left: 5%; animation-delay: 0.5s; }
+.sb-6 { bottom: 35%; left: 90%; animation-delay: 1.5s; width: 22px; }
+.sb-7 { bottom: 50%; left: 20%; animation-delay: 2.5s; }
+.sb-8 { bottom: 8%; left: 30%; animation-delay: 3.5s; }
